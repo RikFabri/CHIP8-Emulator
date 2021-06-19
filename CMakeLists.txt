@@ -29,7 +29,6 @@ find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets LinguistTools REQUIRED)
 find_package(Qt6 COMPONENTS OpenGLWidgets REQUIRED)
 find_package(Qt6 COMPONENTS OpenGL REQUIRED)
 
-
 set(TS_FILES CHIP-8-Emulator_en_BE.ts)
 
 set(PROJECT_SOURCES
@@ -37,6 +36,8 @@ set(PROJECT_SOURCES
         emulator.cpp
         emulator.h
         emulator.ui
+        viewport.cpp
+        viewport.h
         ${TS_FILES}
 )
 
@@ -63,11 +64,11 @@ endif()
 
 target_link_libraries(CHIP-8-Emulator PRIVATE
     Qt${QT_VERSION_MAJOR}::Widgets
-    Qt::Core
-    Qt::Gui
-    Qt::Widgets
-	Qt::OpenGL
-	Qt::OpenGLWidgets)
+    Qt${QT_VERSION_MAJOR}::Core
+    Qt${QT_VERSION_MAJOR}::Gui
+    Qt${QT_VERSION_MAJOR}::Widgets
+	Qt${QT_VERSION_MAJOR}::OpenGL
+	Qt${QT_VERSION_MAJOR}::OpenGLWidgets)
 
 set_target_properties(CHIP-8-Emulator PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com

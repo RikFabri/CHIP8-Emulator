@@ -15,7 +15,12 @@ public:
     Emulator(QWidget *parent = nullptr);
     ~Emulator();
 
+private slots:
+    void on_actionLoad_triggered();
+
 private:
     Ui::Emulator *ui;
+
+    
 };
 #endif // EMULATOR_H
