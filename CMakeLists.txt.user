@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.15.0, 2021-06-19T19:56:11. -->
+<!-- Written by QtCreator 4.15.0, 2021-06-19T20:46:43. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -357,7 +357,7 @@
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">C:/Users/rikfa/AppData/Local/Temp/QtCreator-yigBDm/qtc-cmake-DvupkBiH</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">C:/Users/rikfa/Documents/PortfolioProjects/CHIP8-Emulator/build-CHIP-8-Emulator-Desktop_Qt_6_1_0_MinGW_64_bit-Debug</value>
    </valuemap>
    <value type="int" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>

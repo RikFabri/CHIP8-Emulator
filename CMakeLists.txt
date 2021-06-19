@@ -26,6 +26,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(QT NAMES Qt6 COMPONENTS Widgets LinguistTools REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets LinguistTools REQUIRED)
+find_package(Qt6 COMPONENTS OpenGLWidgets REQUIRED)
+find_package(Qt6 COMPONENTS OpenGL REQUIRED)
+
 
 set(TS_FILES CHIP-8-Emulator_en_BE.ts)
 
@@ -58,7 +61,13 @@ else()
     qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 endif()
 
-target_link_libraries(CHIP-8-Emulator PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(CHIP-8-Emulator PRIVATE
+    Qt${QT_VERSION_MAJOR}::Widgets
+    Qt::Core
+    Qt::Gui
+    Qt::Widgets
+	Qt::OpenGL
+	Qt::OpenGLWidgets)
 
 set_target_properties(CHIP-8-Emulator PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
