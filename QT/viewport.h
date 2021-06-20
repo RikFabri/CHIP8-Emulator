@@ -8,25 +8,25 @@
 
 class QOpenGLShaderProgram;
 
+namespace chip
+{
+    class Emulator;
+}
+
 class ViewPort : public QOpenGLWidget, protected QOpenGLFunctions
 {
     Q_OBJECT
 public:
     explicit ViewPort(QWidget* pParent = nullptr);
-    ~ViewPort();
+    
 
-    virtual void initializeGL() override;
-    virtual void paintGL() override;
-    virtual void resizeGL(int w, int h) override;
+protected:
+    void paintEvent(QPaintEvent* pEvent) override;
 
 private:
-    QOpenGLShaderProgram* m_pShaderProgram;
+    void EmulationUpdate();
 
-    unsigned int m_VerticesId, m_IndicesId;
-    int m_TexLocation;
-
-    float m_Vertices[20];
-    unsigned int m_Indices[6];
+    QScopedPointer<chip::Emulator> m_Emulator;
 };
 
 #endif // VIEWPORT_H

@@ -5,19 +5,19 @@
     <name>Emulator</name>
     <message>
         <location filename="emulator.ui" line="17"/>
-        <location filename="build/CHIP-8-Emulator_autogen/include_Debug/ui_emulator.h" line="70"/>
+        <location filename="../build/QT/CHIP-8-Emulator_autogen/include_Debug/ui_emulator.h" line="70"/>
         <source>Emulator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="emulator.ui" line="49"/>
-        <location filename="build/CHIP-8-Emulator_autogen/include_Debug/ui_emulator.h" line="72"/>
+        <location filename="../build/QT/CHIP-8-Emulator_autogen/include_Debug/ui_emulator.h" line="72"/>
         <source>ROM</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="emulator.ui" line="57"/>
-        <location filename="build/CHIP-8-Emulator_autogen/include_Debug/ui_emulator.h" line="71"/>
+        <location filename="../build/QT/CHIP-8-Emulator_autogen/include_Debug/ui_emulator.h" line="71"/>
         <source>Load</source>
         <translation type="unfinished"></translation>
     </message>
