@@ -76,6 +76,12 @@ set_target_properties(CHIP-8-Emulator PROPERTIES
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
 )
 
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Include/)
+
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(CHIP-8-Emulator)
 endif()
+
+install(DIRECTORY Shaders DESTINATION bin)
+
+set_property(TARGET ${PROJECT_NAME} PROPERTY VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}")
