@@ -3,6 +3,8 @@ cmake_minimum_required(VERSION 3.19)
 project(CHIP-8-Emulator VERSION 0.1 LANGUAGES CXX)
 
 add_subdirectory(QT)
-add_subdirectory(Emulator)
+add_subdirectory(CHIP-8)
 
-set_property(TARGET ${PROJECT_NAME} PROPERTY VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}")
+include(CPack)
+include(InstallRequiredSystemLibraries)
+install(TARGETS ${PROJECT_NAME} DESTINATION bin)
