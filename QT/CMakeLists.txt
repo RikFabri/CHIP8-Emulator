@@ -72,3 +72,14 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(${PROJECT_NAME})
 endif()
+
+if(WIN32)
+	set( QtBaseDir "C:/Program Files (x86)/Qt" )
+	set( DLLS "Qt6Core" "Qt6Gui" "Qt6Widgets" "Qt6OpenGL" "Qt6OpenGLWidgets" )
+	
+	foreach(dll IN LISTS DLLS)
+		install(FILES "${QtBaseDir}/bin/${dll}.dll" DESTINATION bin)
+	endforeach()
+	
+	install(FILES "${QtBaseDir}/plugins/platforms/qwindowsd.dll" DESTINATION bin)
+endif()

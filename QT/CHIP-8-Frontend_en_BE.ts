@@ -6,48 +6,36 @@
     <message>
         <location filename="emulatorwindow.ui" line="38"/>
         <location filename="../build/QT/CHIP-8-Emulator_autogen/include_Debug/ui_emulatorwindow.h" line="95"/>
-        <location filename="../build/QT/CHIP-8-Emulator_autogen/include_MinSizeRel/ui_emulatorwindow.h" line="95"/>
-        <location filename="../build/QT/CHIP-8-Emulator_autogen/include_Release/ui_emulatorwindow.h" line="95"/>
         <source>Chip-8 emulator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="emulatorwindow.ui" line="80"/>
         <location filename="../build/QT/CHIP-8-Emulator_autogen/include_Debug/ui_emulatorwindow.h" line="99"/>
-        <location filename="../build/QT/CHIP-8-Emulator_autogen/include_MinSizeRel/ui_emulatorwindow.h" line="99"/>
-        <location filename="../build/QT/CHIP-8-Emulator_autogen/include_Release/ui_emulatorwindow.h" line="99"/>
         <source>Rom</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="emulatorwindow.ui" line="87"/>
         <location filename="../build/QT/CHIP-8-Emulator_autogen/include_Debug/ui_emulatorwindow.h" line="100"/>
-        <location filename="../build/QT/CHIP-8-Emulator_autogen/include_MinSizeRel/ui_emulatorwindow.h" line="100"/>
-        <location filename="../build/QT/CHIP-8-Emulator_autogen/include_Release/ui_emulatorwindow.h" line="100"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="emulatorwindow.ui" line="106"/>
         <location filename="../build/QT/CHIP-8-Emulator_autogen/include_Debug/ui_emulatorwindow.h" line="98"/>
-        <location filename="../build/QT/CHIP-8-Emulator_autogen/include_MinSizeRel/ui_emulatorwindow.h" line="98"/>
-        <location filename="../build/QT/CHIP-8-Emulator_autogen/include_Release/ui_emulatorwindow.h" line="98"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="emulatorwindow.ui" line="96"/>
         <location filename="../build/QT/CHIP-8-Emulator_autogen/include_Debug/ui_emulatorwindow.h" line="96"/>
-        <location filename="../build/QT/CHIP-8-Emulator_autogen/include_MinSizeRel/ui_emulatorwindow.h" line="96"/>
-        <location filename="../build/QT/CHIP-8-Emulator_autogen/include_Release/ui_emulatorwindow.h" line="96"/>
         <source>Load</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="emulatorwindow.ui" line="101"/>
         <location filename="../build/QT/CHIP-8-Emulator_autogen/include_Debug/ui_emulatorwindow.h" line="97"/>
-        <location filename="../build/QT/CHIP-8-Emulator_autogen/include_MinSizeRel/ui_emulatorwindow.h" line="97"/>
-        <location filename="../build/QT/CHIP-8-Emulator_autogen/include_Release/ui_emulatorwindow.h" line="97"/>
         <source>Reload</source>
         <translation type="unfinished"></translation>
     </message>
