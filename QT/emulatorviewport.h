@@ -13,6 +13,7 @@ public:
     void ReloadRom();
 private:
     CHIP::VM m_Chip8Vm;
+    bool m_MainLoopTimerStarted;
 
     void UpdateEmulator();
     void paintEvent(QPaintEvent *pEvent) override;

@@ -7,6 +7,7 @@
 
 EmulatorViewport::EmulatorViewport(QWidget *pParent)
     : m_Chip8Vm()
+    , m_MainLoopTimerStarted(false)
 {
     setFocusPolicy(Qt::FocusPolicy::StrongFocus);
 }
@@ -15,10 +16,13 @@ void EmulatorViewport::SetRom(const QString &path)
 {
     m_Chip8Vm.LoadRom(path.toStdString());
 
+    if (m_MainLoopTimerStarted)
+        return;
 
     QTimer* pTimer = new QTimer(this);
     connect(pTimer, &QTimer::timeout, this, &EmulatorViewport::UpdateEmulator);
     pTimer->start(1);
+    m_MainLoopTimerStarted = true;
 }
 
 void EmulatorViewport::ReloadRom()
@@ -28,7 +32,9 @@ void EmulatorViewport::ReloadRom()
 
 void EmulatorViewport::UpdateEmulator()
 {
-    m_Chip8Vm.Update();
+    // QTimers couldn't go fast than 1 millisecond delays and updating twice gets you a much nicer "clock speed"
+    for (int i = 0; i < 2; ++i)
+        m_Chip8Vm.Update();
 
     if (m_Chip8Vm.DidDisplayUpdate())
         repaint();
