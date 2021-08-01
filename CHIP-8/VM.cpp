@@ -248,6 +248,10 @@ int CHIP::VM::GetPixelIndex(int x, int y) const
 
 int CHIP::VM::ConvertCharToHex(char character) const
 {
+	// IsDigit's behaviour is undefined if character doesn't fall in this range
+	if (character < 0 || character > 0xFF)
+		return -1;
+
 	const auto digitDifference = '1' - 0x01;
 	const auto charDifference = 'A' - 0x0A;
 
