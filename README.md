@@ -1,7 +1,12 @@
 # CHIP8-Emulator
-A CHIP-8 VM/interpreter written as a way to experiment with Cmake, QT and dabble into emulators
+A cross-platform CHIP-8 VM/interpreter written as a way to experiment with Cmake, QT and dabble into emulators
 
 The emulator doesn't play sound, altho the relevant opcodes are there
+
+### Installing
+Windows users can download a portable install [here](https://github.com/RikFabri/CHIP8-Emulator/releases).<br>
+I don't provide any linux binaries at the moment, but I have compiled it on manjaro myself to make sure it works.
+
 
 ### Input
 Chip-8 programs can react to A-F and 0-9, For example, the brix and breakout keybindings are 4 and 6 for left and right.
