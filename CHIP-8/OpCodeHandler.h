@@ -1,6 +1,7 @@
 #pragma once
 #include <functional>
 #include <vector>
+#include <cstdint>
 
 namespace CHIP
 {
