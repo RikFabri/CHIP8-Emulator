@@ -1,7 +1,9 @@
 # CHIP8-Emulator
 A cross-platform CHIP-8 VM/interpreter written as a way to experiment with Cmake, QT and dabble into emulators
 
-The emulator doesn't play sound, altho the relevant opcodes are there
+The emulator doesn't play sound, altho the relevant opcodes are there (learning pcm is for another time)
+
+![screen-gif](./ReadmeAssets/Chip8-woking.gif)
 
 ### Installing
 Windows users can download a portable install [here](https://github.com/RikFabri/CHIP8-Emulator/releases).<br>
