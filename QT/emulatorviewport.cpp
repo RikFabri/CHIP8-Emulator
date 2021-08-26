@@ -8,6 +8,7 @@
 EmulatorViewport::EmulatorViewport(QWidget *pParent)
     : m_Chip8Vm()
     , m_MainLoopTimerStarted(false)
+    , m_ClockspeedMultiplier(1)
 {
     setFocusPolicy(Qt::FocusPolicy::StrongFocus);
 }
@@ -30,10 +31,19 @@ void EmulatorViewport::ReloadRom()
     m_Chip8Vm.ReloadRom();
 }
 
+void EmulatorViewport::SetClockspeedMultiplier(int multiplier)
+{
+    m_ClockspeedMultiplier = multiplier;
+}
+
+int EmulatorViewport::GetClockspeedMultiplier() const
+{
+    return m_ClockspeedMultiplier;
+}
+
 void EmulatorViewport::UpdateEmulator()
 {
-    // QTimers couldn't go fast than 1 millisecond delays and updating twice gets you a much nicer "clock speed"
-    for (int i = 0; i < 2; ++i)
+    for (int i = 0; i < m_ClockspeedMultiplier; ++i)
         m_Chip8Vm.Update();
 
     if (m_Chip8Vm.DidDisplayUpdate())

@@ -52,7 +52,7 @@
      <number>0</number>
     </property>
     <item row="0" column="0">
-     <widget class="EmulatorViewport" name="openGLWidget">
+     <widget class="EmulatorViewport" name="emulatorWidget">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -88,8 +88,15 @@
     </property>
     <addaction name="actionAbout"/>
    </widget>
+   <widget class="QMenu" name="menuCPU">
+    <property name="title">
+     <string>CPU</string>
+    </property>
+    <addaction name="actionClock_speed"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuAbout"/>
+   <addaction name="menuCPU"/>
   </widget>
   <action name="actionLoad">
    <property name="text">
@@ -104,6 +111,11 @@
   <action name="actionAbout">
    <property name="text">
     <string>About</string>
+   </property>
+  </action>
+  <action name="actionClock_speed">
+   <property name="text">
+    <string>Clock speed</string>
    </property>
   </action>
  </widget>

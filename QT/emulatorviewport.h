@@ -4,6 +4,7 @@
 #include <QOpenGLWidget>
 #include <VM.h>
 
+// A QT widget managing and rendering the actual CHIP-8 VM
 class EmulatorViewport : public QOpenGLWidget
 {
 public:
@@ -11,9 +12,15 @@ public:
 
     void SetRom(const QString& path);
     void ReloadRom();
+
+    void SetClockspeedMultiplier(int multiplier);
+    int GetClockspeedMultiplier() const;
 private:
     CHIP::VM m_Chip8Vm;
     bool m_MainLoopTimerStarted;
+
+    // The amount of times the cpu updates per tick, NOT the underlying timer.
+    int m_ClockspeedMultiplier;
 
     void UpdateEmulator();
     void paintEvent(QPaintEvent *pEvent) override;

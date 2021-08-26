@@ -32,6 +32,9 @@ set(PROJECT_SOURCES
         emulatorwindow.ui
         emulatorviewport.h
         emulatorviewport.cpp
+		clockspeedwindow.h
+		clockspeedwindow.cpp
+		clockspeedwindow.ui
         ${TS_FILES}
 )
 
