@@ -92,15 +92,15 @@ void CHIP::OpCodeHandler::OpcodeANNN(VM& vm, uint16_t opcode)
 
 void CHIP::OpCodeHandler::OpcodeDXYN(VM& vm, uint16_t opcode)
 {
-    auto x = ExtractX(opcode);
-    auto y = ExtractY(opcode);
-    auto n = opcode & 0x000F;
+    const auto x = ExtractX(opcode);
+    const auto y = ExtractY(opcode);
+    const auto n = ExtractN(opcode);
 
     // Top left position of the sprite
-    auto xSpriteCoord = vm.Vx[x];
-    auto ySpriteCoord = vm.Vx[y];
+    const auto xSpriteCoord = vm.Vx[x];
+    const auto ySpriteCoord = vm.Vx[y];
 
-    bool collision = false;
+    auto collision = false;
 
     // The sprite is rendered 8 pixels wide (a pixel per bit) and n bytes high
     for (int height = 0; height < n; ++height)
@@ -117,9 +117,9 @@ void CHIP::OpCodeHandler::OpcodeDXYN(VM& vm, uint16_t opcode)
             if (!isPixelOnInSprite)
                 continue;
 
-            // If we need to draw this pixel, we xor it onto the display, setting a collision flag if we undid an older pixel
             const auto pixelIndex = vm.GetPixelIndex(xSpriteCoord + width, ySpriteCoord + height);
 
+            // If we need to draw this pixel, we xor it onto the display, setting a collision flag if we undid an older pixel
             if (vm.m_DisplayPixelValues[pixelIndex] == 1)
             {
                 vm.m_DisplayPixelValues[pixelIndex] = 0;
@@ -131,6 +131,7 @@ void CHIP::OpCodeHandler::OpcodeDXYN(VM& vm, uint16_t opcode)
         }
     }
 
+    // This register keeps track of collisions
     vm.Vx[0x0F] = collision ? 1 : 0;
     vm.m_DisplayUpdated = true;
 
@@ -485,7 +486,7 @@ void CHIP::OpCodeHandler::OpcodeBNNN(VM& vm, uint16_t opcode)
 
 #pragma region Helper functions to extract values from opcode
 
-int CHIP::OpCodeHandler::ExtractX(uint16_t opcode)
+uint8_t CHIP::OpCodeHandler::ExtractX(uint16_t opcode)
 {
     return ((opcode & 0x0F00) >> 8);
 }
@@ -500,7 +501,12 @@ uint8_t CHIP::OpCodeHandler::ExtractNN(uint16_t opcode)
     return (opcode & 0x00FF);
 }
 
-int CHIP::OpCodeHandler::ExtractY(uint16_t opcode)
+uint8_t CHIP::OpCodeHandler::ExtractN(uint16_t opcode)
+{
+    return (opcode & 0x000F);
+}
+
+uint8_t CHIP::OpCodeHandler::ExtractY(uint16_t opcode)
 {
     return ((opcode & 0x00F0) >> 4);
 }

@@ -23,13 +23,15 @@ namespace CHIP
         void HandleOpCode(VM& vm, uint16_t opcode);
     private:
         // Returns the value of X in a hex value of NXNN
-        int ExtractX(uint16_t opcode);
+        uint8_t ExtractX(uint16_t opcode);
         // Returns the value of NNN in a hex value of XNNN
         uint16_t ExtractNNN(uint16_t opcode);
         // Returns the value of NN in a hex value of XXNN
         uint8_t ExtractNN(uint16_t opcode);
+        // Returns the value of N in a hex value of XXXN
+        uint8_t ExtractN(uint16_t opcode);
         // Returns the value of Y in a hex value of NNYN
-        int ExtractY(uint16_t opcode);
+        uint8_t ExtractY(uint16_t opcode);
     private:
         bool m_PrintInstruction;
         std::vector<OpCodeDetails> m_OpCodeDetails;
