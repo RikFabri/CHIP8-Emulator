@@ -67,7 +67,6 @@ void EmulatorViewport::paintEvent(QPaintEvent *pEvent)
     QPainter painter;
     painter.begin(this);
     painter.setRenderHints(QPainter::Antialiasing); // No AA
-    painter.fillRect(0, 0, 64 * 10, 32 * 10, QColor(0,0,0)); // Clear display
 
     painter.drawPixmap(0, 0, 64 * 10, 32 * 10, ChipDisplayTexture); // Draw virtual machine's display
 
