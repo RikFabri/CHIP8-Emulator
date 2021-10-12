@@ -46,7 +46,7 @@ CHIP::OpCodeHandler::OpCodeHandler(bool printInstructions)
 
 void CHIP::OpCodeHandler::HandleOpCode(VM& vm, uint16_t opcode)
 {
-    for (auto details : m_OpCodeDetails)
+    for (const auto details : m_OpCodeDetails)
     {
         if ((details.mask & opcode) == details.opcode)
         {

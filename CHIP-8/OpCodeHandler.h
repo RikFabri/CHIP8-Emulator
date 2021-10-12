@@ -13,9 +13,9 @@ namespace CHIP
     {
         struct OpCodeDetails
         {
-            uint16_t opcode;
-            uint16_t mask;
-            std::function<void(OpCodeHandler*, VM&, uint16_t)> instruction;
+            const uint16_t opcode;
+            const uint16_t mask;
+            const std::function<void(OpCodeHandler*, VM&, uint16_t)> instruction;
         };
         
     public:
